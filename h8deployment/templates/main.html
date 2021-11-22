@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" href = "{{ url_for('static', filename='css/style.css')
+}}">
+  <title>H8 Model Deployment</title>
+</head>
+
+<body>
+ <div class="form">
+	<h1>HACTIV8 STUDENT PLACEMENT CLASSIFIER</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/style.css')}}">    
+        <input type="text" name="age" placeholder="age" required="required" />
+        <input type="text" name="job" placeholder="job" required="required" />
+		<input type="text" name="marital" placeholder="marital" required="required" />
+		<input type="text" name="education" placeholder="education" required="required" />
+        <input type="text" name="duration" placeholder="duration" required="required" />
+		<input type="text" name="previous" placeholder="previous" required="required" />
+        <input type="text" name="poutcome" placeholder="poutcome" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    
+    <p class = "message">{{ prediction_text }}</p>
+   
+
+ </div>
+
+
+</body>
+</html>
